@@ -1,0 +1,36 @@
+.element-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 90px;
+    height: 90px;
+}
+
+.element-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.element-button.selected {
+    border-color: #4a90e2;
+    background-color: #e6f2ff;
+    box-shadow: 0 0 10px rgba(74, 144, 226, 0.5);
+}
+
+.element-emoji {
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.element-name {
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}

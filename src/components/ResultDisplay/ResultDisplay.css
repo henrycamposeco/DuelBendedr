@@ -1,0 +1,129 @@
+.result-display {
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+    width: 100%;
+    max-width: 500px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.result-display.win {
+    background-color: rgba(76, 175, 80, 0.2);
+    border: 1px solid #4caf50;
+}
+
+.result-display.lose {
+    background-color: rgba(244, 67, 54, 0.2);
+    border: 1px solid #f44336;
+}
+
+.result-display.draw {
+    background-color: rgba(255, 193, 7, 0.2);
+    border: 1px solid #ffc107;
+}
+
+.elements-used {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.player-element, .computer-element {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.player-element {
+    margin-right: 10px;
+}
+
+.computer-element {
+    margin-left: 10px;
+}
+
+.element-emoji {
+    font-size: 36px;
+    margin-bottom: 5px;
+}
+
+.vs {
+    font-weight: bold;
+    font-size: 20px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.result-text {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.reason-text {
+    text-align: center;
+    font-style: italic;
+    font-size: 16px;
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+    line-height: 1.5;
+    color: #444;
+    border-left: 3px solid rgba(0, 0, 0, 0.2);
+}
+
+.win .result-text {
+    color: #4caf50;
+    background-color: rgba(76, 175, 80, 0.1);
+}
+
+.lose .result-text {
+    color: #f44336;
+    background-color: rgba(244, 67, 54, 0.1);
+}
+
+.draw .result-text {
+    color: #ffc107;
+    background-color: rgba(255, 193, 7, 0.1);
+}
+
+@media (max-width: 500px) {
+    .result-display {
+        padding: 15px;
+    }
+
+    .element-emoji {
+        font-size: 28px;
+    }
+
+    .result-text {
+        font-size: 20px;
+    }
+
+    .reason-text {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}
