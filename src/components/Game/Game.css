@@ -58,3 +58,17 @@ h1 {
     background-color: #357ab8;
     transform: scale(1.05);
 }
+
+.rules-button {
+    padding: 12px 25px;
+    background-color: #63486a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 20px auto;
+    display: block;
+}

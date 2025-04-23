@@ -6,6 +6,7 @@ import { HealthBar } from '../HealthBar/HealthBar';
 import { GameBoard } from '../GameBoard/GameBoard';
 import { updatePlayerHealth, checkGameOver, resetGame } from '../../utils/gameLogic';
 import './Game.css';
+import {Rules} from "../Rules/Rules.tsx";
 
 export const Game: FunctionComponent = () => {
     const [human, setHuman] = useState<Player>({
@@ -24,6 +25,9 @@ export const Game: FunctionComponent = () => {
         winner: null,
         isGameOver: false
     });
+
+    const [showRules, setShowRules] = useState(false);
+
 
     const handleRoundComplete = (roundResult: RoundResult) => {
         // Actualizar la salud basado en el resultado
@@ -55,9 +59,18 @@ export const Game: FunctionComponent = () => {
         });
     };
 
+    const handleRulesClick = () => {
+        setShowRules(prevShowRules => !prevShowRules);
+    };
+
+
     return (
         <div className="game-container">
             <h1>DuelBender</h1>
+
+
+
+
 
             <div className="health-bars">
                 <HealthBar playerType={PlayerType.HUMAN} health={human.health} />
@@ -78,6 +91,13 @@ export const Game: FunctionComponent = () => {
             ) : (
                 <GameBoard onRoundComplete={handleRoundComplete} />
             )}
+
+            <div className="game-info">
+                <div>
+                    <button onClick={handleRulesClick} className="rules-button">Ver Reglas</button>
+                </div>
+            </div>
+            {showRules && <Rules />}
         </div>
     );
 };
